@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchCont from './SearchCont';
 import TotalPort from '../components/TotalPort';
-<<<<<<< HEAD
-import PortContainer from './PortContainer';
-
-
-function App() {
-  // user is initialized as empty (unless login is implemented)
-  const [user, setUser] = useState({});
-=======
-import Profile from './Profile';
 
 function App() {
   // user is initialized as empty (unless login is implemented)
@@ -21,7 +12,6 @@ function App() {
   const [netWorth, setNetWorth] = useState(5000);
   const [funds, setFunds] = useState(200);
 
->>>>>>> dev
   const fetchUserData = async () => {
     try {
       // fetch userInfo by username
