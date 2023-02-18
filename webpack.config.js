@@ -5,12 +5,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // eslint-disab
 const isDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
-  mode: process.env.NODE_ENV,
   devServer: {
     //   host: 'localhost',
     //   port: '8080',
@@ -34,6 +34,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+          },
         },
       },
       {
@@ -48,11 +51,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './client/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[fullhash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[fullhash].css',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };
