@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SearchCont from './SearchCont';
 import TotalPort from '../components/TotalPort';
+import PortContainer from './PortContainer';
+
 
 function App() {
   // user is initialized as empty (unless login is implemented)
   const [user, setUser] = useState({});
-
   const fetchUserData = async () => {
     try {
       const response = await fetch('/api/user');
@@ -18,7 +19,6 @@ function App() {
   useEffect(() => {
     fetchUserData();
   });
-
   return (
     <>
       <TotalPort user={user} />
@@ -27,5 +27,4 @@ function App() {
     </>
   );
 }
-
 export default App;
