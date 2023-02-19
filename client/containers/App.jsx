@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchCont from './SearchCont';
 import TotalPort from '../components/TotalPort';
+import Profile from './Profile';
 
 function App() {
   // user is initialized as empty (unless login is implemented)
