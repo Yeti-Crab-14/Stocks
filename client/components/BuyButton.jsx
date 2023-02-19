@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 
-function BuyButton({ symbol, user }) {
+function BuyButton({ symbol, user, setSellQty }) {
   const [quantity, setQuantity] = useState(1);
   const handleChange = (event) => {
     setQuantity(event.target.value);
+    setSellQty(event.target.value);
   };
 
   const onBuy = async () => {
@@ -35,7 +36,7 @@ function BuyButton({ symbol, user }) {
           onBuy();
         }}
         variant="contained"
-        style={{ background: 'green', marginTop: '1em' }}
+        style={{ background: 'green' }}
       >
         BUY
       </Button>
