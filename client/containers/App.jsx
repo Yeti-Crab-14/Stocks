@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import SearchCont from './SearchCont';
 import TotalPort from '../components/TotalPort';
 import Profile from './Profile';
+import PortfolioCont from './PortfolioCont';
 
 function App() {
-  // user is initialized as empty (unless login is implemented)
+  // user is initialized as dummy user (unless login is implemented)
   const [user, setUser] = useState({
     username: 'Angelo',
     profilePic:
@@ -12,7 +13,6 @@ function App() {
   });
   const [netWorth, setNetWorth] = useState(5000);
   const [funds, setFunds] = useState(200);
-
   const fetchUserData = async () => {
     try {
       // fetch userInfo by username
@@ -30,12 +30,13 @@ function App() {
 
   return (
     <>
-      <nav> THIS IS THE NAV BAR</nav>
+      <nav> Stockssssss</nav>
       <div className="top-content">
         <TotalPort netWorth={netWorth} funds={funds} />
+        <PortfolioCont user={user} />
         <Profile user={user} />
       </div>
-      <SearchCont />
+      <SearchCont user={user} />
     </>
   );
 }
