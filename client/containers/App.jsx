@@ -13,6 +13,7 @@ function App() {
   });
   const [netWorth, setNetWorth] = useState(5000);
   const [funds, setFunds] = useState(200);
+
   const fetchUserData = async () => {
     try {
       // fetch userInfo by username
@@ -32,10 +33,14 @@ function App() {
       <nav> Stockssssss</nav>
       <div className="top-content">
         <TotalPort netWorth={netWorth} funds={funds} />
-        <PortfolioCont user={user} />
         <Profile user={user} />
       </div>
-      <SearchCont user={user} />
+      <div className="search-cont">
+        <SearchCont user={user} />
+      </div>
+      <div className="user-port">
+        <PortfolioCont user={user} />
+      </div>
     </>
   );
 }

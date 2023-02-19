@@ -11,7 +11,7 @@ function PortfolioCont({ user }) {
 
   return (
     <section className="portfolio-container">
-      PORT FOLIO
+      PORTFOLIO
       {userPort.map((ticker, i) => (
         <PortTicker key={i} user={user} ticker={ticker} />
       ))}
