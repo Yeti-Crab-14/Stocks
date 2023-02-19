@@ -32,11 +32,13 @@ function Search({ setStockSearch }) {
         onChange={handleChange}
       />
       <Button
+        id="search-ticker-button"
         variant="outlined"
         endIcon={<SearchIcon />}
         onClick={() => {
           handleSearch();
         }}
+        style={{ marginLeft: '2em' }}
       >
         Search
       </Button>
