@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+html{
+  height: 100%;
+}
+
 body {
-  background-color: lightblue;
+  width:100%;
+  background: linear-gradient(to bottom right, rgba(187,240,243,1), rgba(187,240,243,0));
   font-family: 'Roboto', sans-serif;
 }
 input[type='number']::-webkit-inner-spin-button,
@@ -40,10 +45,12 @@ nav {
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.468);
   border-radius: 10px;
   padding: 1em;
+  margin-top: 2em;
 }
 .port-ticker-cont {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1em;
 }
 .profile-container {
   display: flex;
@@ -67,12 +74,14 @@ nav {
   flex-direction: row;
 }
 
+
 .ticker-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 2em;
   max-width: 10em;
+  margin-top: 5em;
 }
 
 .quantity-input {
