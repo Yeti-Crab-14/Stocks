@@ -1,7 +1,7 @@
 import React from 'react';
 import BuyButton from './BuyButton';
 
-function Ticker({ stockSearch, user }) {
+function Ticker({ stockSearch, user, userPort, setUserPort }) {
   // might have to use delayedPrice -- check when market opens
   console.log('stockSearch: ', stockSearch);
   const { iexClose, isUSMarketOpen, iexRealtimePrice, symbol } = stockSearch;
@@ -14,7 +14,13 @@ function Ticker({ stockSearch, user }) {
     <section className="ticker-info">
       <h4>{symbol}</h4>
       <h2>{stockPrice}</h2>
-      <BuyButton symbol={symbol} user={user} />
+      <BuyButton
+        symbol={symbol}
+        user={user}
+        userPort={userPort}
+        setUserPort={setUserPort}
+        stockPrice={stockPrice}
+      />
     </section>
   );
 }

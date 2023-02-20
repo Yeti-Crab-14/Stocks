@@ -11,6 +11,11 @@ function App() {
     profilePic:
       'https://static.vecteezy.com/system/resources/previews/011/415/728/original/christmas-snowman-cartoon-colored-clipart-free-vector.jpg',
   });
+  const [userPort, setUserPort] = useState([
+    { symbol: 'AAPL', price: 222, qty: 5 },
+    { symbol: 'MSFT', price: 222, qty: 10 },
+    { symbol: 'TSLA', price: 222, qty: 15 },
+  ]);
   const [netWorth, setNetWorth] = useState(5000);
   const [funds, setFunds] = useState(200);
 
@@ -36,10 +41,10 @@ function App() {
         <Profile user={user} />
       </div>
       <div className="search-cont">
-        <SearchCont user={user} />
+        <SearchCont user={user} userPort={userPort} setUserPort={setUserPort} />
       </div>
       <div className="user-port">
-        <PortfolioCont user={user} />
+        <PortfolioCont user={user} userPort={userPort} />
       </div>
     </>
   );
