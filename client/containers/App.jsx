@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchCont from './SearchCont';
-import TotalPort from '../components/TotalPort';
+import TotalPort from './TotalPort';
 import Profile from './Profile';
 import PortfolioCont from './PortfolioCont';
 

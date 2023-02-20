@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // eslint-disable-line import/no-extraneous-dependencies
+const Dotenv = require('dotenv-webpack'); // eslint-disable-line import/no-extraneous-dependencies
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -57,6 +58,7 @@ module.exports = {
       filename: isDevelopment ? '[name].css' : '[name].[fullhash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[fullhash].css',
     }),
+    new Dotenv(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
