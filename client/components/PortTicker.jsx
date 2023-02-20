@@ -9,6 +9,7 @@ function PortTicker({ ticker, user }) {
     <section className="port-ticker-cont">
       <h3>{ticker.symbol}</h3>
       <h3>{ticker.price}</h3>
+      <h5>{ticker.qty}</h5>
       <BuyButton setSellQty={setSellQty} user={user} ticker={ticker} />
       <SellButton sellQty={sellQty} user={user} ticker={ticker} />
     </section>
