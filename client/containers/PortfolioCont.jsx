@@ -2,18 +2,18 @@ import React from 'react';
 import PortTicker from '../components/PortTicker';
 import { useState, useEffect } from 'react';
 
-function PortfolioCont({ user }) {
-  const [userPort, setUserPort] = useState([
-    { symbol: 'AAPL', price: 222 },
-    { symbol: 'MSFT', price: 222 },
-    { symbol: 'TSLA', price: 222 },
-  ]);
-
+function PortfolioCont({ user, userPort, setUserPort }) {
   return (
     <section className="portfolio-container">
       PORTFOLIO
       {userPort.map((ticker, i) => (
-        <PortTicker key={i} user={user} ticker={ticker} />
+        <PortTicker
+          key={i}
+          user={user}
+          ticker={ticker}
+          setUserPort={setUserPort}
+          userPort={userPort}
+        />
       ))}
     </section>
   );

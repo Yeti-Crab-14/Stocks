@@ -8,11 +8,10 @@ function Search({ setStockSearch }) {
   const handleChange = (event) => {
     setTicker(event.target.value);
   };
-
   const handleSearch = async () => {
     try {
       const response = await fetch(
-        `https://api.iex.cloud/v1/data/core/quote/${ticker}?token=pk_0236a8ea0bac4b18b513eb96d690502c`
+        `https://api.iex.cloud/v1/data/core/quote/${ticker}?token=${process.env.REACT_APP_IEX_KEY}`
       );
       const tickerData = (await response.json())[0];
       setStockSearch(tickerData);
