@@ -44,7 +44,11 @@ function App() {
         <SearchCont user={user} userPort={userPort} setUserPort={setUserPort} />
       </div>
       <div className="user-port">
-        <PortfolioCont user={user} userPort={userPort} />
+        <PortfolioCont
+          user={user}
+          userPort={userPort}
+          setUserPort={setUserPort}
+        />
       </div>
     </>
   );
