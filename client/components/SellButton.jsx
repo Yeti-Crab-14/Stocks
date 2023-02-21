@@ -7,7 +7,11 @@ function SellButton({ user, ticker, sellQty, setUserPort, userPort }) {
     for (let i = 0; i < userPort.length; i++) {
       if (userPort[i].symbol === sym) {
         const soldTickerVals = { ...userPort[i] };
-        if (soldTickerVals.qty - Number(quant) <= 0) {
+        if (Number(quant) > soldTickerVals.qty) {
+          newPortValues.push(soldTickerVals);
+          continue;
+        }
+        if (soldTickerVals.qty - Number(quant) === 0) {
           continue;
         } else {
           soldTickerVals.qty -= Number(quant);
