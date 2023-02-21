@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
+  "homepage": "https://github.com/Yeti-Crab-14/Stocks#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production nodemon server/server.js",
@@ -19,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/Yeti-Crab-14/Stocks/issues"
   },
-  "homepage": "https://github.com/Yeti-Crab-14/Stocks#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
