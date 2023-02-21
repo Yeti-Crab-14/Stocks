@@ -10,7 +10,13 @@ function PortTicker({ ticker, user, setUserPort, userPort }) {
       <h3>{ticker.symbol}</h3>
       <h3>{ticker.price}</h3>
       <h5>{ticker.qty}</h5>
-      <BuyButton setSellQty={setSellQty} user={user} ticker={ticker} />
+      <BuyButton
+        setSellQty={setSellQty}
+        user={user}
+        ticker={ticker}
+        setUserPort={setUserPort}
+        userPort={userPort}
+      />
       <SellButton
         sellQty={sellQty}
         user={user}

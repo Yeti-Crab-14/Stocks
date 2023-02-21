@@ -8,6 +8,7 @@ function BuyButton({
   userPort,
   setUserPort,
   stockPrice,
+  ticker,
 }) {
   const [quantity, setQuantity] = useState(1);
   const handleChange = (event) => {
@@ -18,7 +19,11 @@ function BuyButton({
   const addToPort = (sym, quant) => {
     // function to check if ticker already exists in portfolio
     // adds to existing portfolio or creates new entry
-    const newPortTicker = { symbol, qty: Number(quant), price: stockPrice };
+    const newPortTicker = {
+      symbol: sym,
+      qty: Number(quant),
+      price: stockPrice,
+    };
     const newUserPort = [];
     let foundInPort = false;
     for (let i = 0; i < userPort.length; i++) {
@@ -46,7 +51,9 @@ function BuyButton({
       //     headers: { 'Content-Type': 'application/json' },
       //   });
       //   const parsedRes = await response.json();
-      const newPort = addToPort(symbol, quantity);
+      let tickerToUse = symbol;
+      if (symbol === undefined) tickerToUse = ticker.symbol;
+      const newPort = addToPort(tickerToUse, quantity);
       setUserPort(newPort);
       setQuantity(1);
       //   console.log('Your order has been placed. ', parsedRes);
