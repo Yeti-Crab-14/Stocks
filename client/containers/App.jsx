@@ -19,6 +19,29 @@ function App() {
   const [netWorth, setNetWorth] = useState(5000);
   const [funds, setFunds] = useState(200);
 
+  const fetchPrices = async () => {
+    try {
+      const realTimePort = await Promise.all(
+        userPort.map(async (ticker, i) => {
+          const response = await fetch(
+            `https://api.iex.cloud/v1/data/core/quote/${ticker.symbol}?token=${process.env.REACT_APP_IEX_KEY}`
+          );
+          const parsedRes = (await response.json())[0];
+          const newTickerVals = {
+            symbol: ticker.symbol,
+            qty: ticker.qty,
+            price: parsedRes.iexRealtimePrice,
+          };
+          console.log('newTickerVals: ', newTickerVals);
+          return newTickerVals;
+        })
+      );
+      setUserPort(realTimePort);
+    } catch (err) {
+      console.log('Error in when making search request, ', err);
+    }
+  };
+
   const fetchUserData = async () => {
     try {
       // fetch userInfo by username
@@ -32,7 +55,8 @@ function App() {
   };
   useEffect(() => {
     fetchUserData();
-  });
+    fetchPrices();
+  }, []);
   return (
     <>
       <nav> Stockssssss</nav>
